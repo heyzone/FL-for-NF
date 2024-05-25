@@ -44,8 +44,8 @@ RUN BACKGROUND docker run -d -p 80:3000 --name container   \
 
 RUN docker ps -a
 
-EXPOSE WEBSITE http://localhost:80
+EXPOSE WEBSITE http://localhost:3000
 # run the server
 RUN BACKGROUND echo "hello world" && \
-    while true; do curl -s http://localhost:80/status; sleep 15; done && \
+    while true; do curl -s http://localhost:3000/status; sleep 15; done && \
     tail -f /dev/null
